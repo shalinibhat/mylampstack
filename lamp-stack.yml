@@ -7,22 +7,22 @@
       become_user: root
       yum:
         pkg:
-          - apache2
+          - httpd
           - mysql-server
           - php7.0
           - php7.0-mysql
         state: present
         update_cache: yes
 
-    - name: start apache service
+    - name: service httpd start
       become: yes
       become_user: root
       service:
-        name: apache2
+        name: httpd
         state: started
         enabled: yes
 
-    - name: start mysql service
+    - name: service mysql start
       become: yes
       become_user: root
       service:
