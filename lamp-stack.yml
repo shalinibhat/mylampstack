@@ -8,7 +8,6 @@
       yum:
         pkg:
           - httpd
-          - mysql-community-server
           - php72
         state: present
         update_cache: yes
