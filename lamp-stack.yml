@@ -8,7 +8,7 @@
       yum:
         pkg:
           - httpd
-          - php72
+          - php
         state: present
         update_cache: yes
 
