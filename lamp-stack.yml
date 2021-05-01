@@ -9,6 +9,7 @@
         pkg:
           - httpd
           - php
+          - http://repo.mysql.com/mysql57-community-release-el7-10.noarch.rpm
         state: present
         update_cache: yes
 
@@ -24,7 +25,7 @@
       become: yes
       become_user: root
       service:
-        name: mysql
+        name: mysqld
         state: started
         enabled: yes
 
