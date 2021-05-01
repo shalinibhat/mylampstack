@@ -22,12 +22,7 @@
         enabled: yes
 
     - name: service mysql start
-      become: yes
-      become_user: root
-      service:
-        name: mysqld
-        state: started
-        enabled: yes
+     action: service name=mysqld state=started
 
     - name: create target directory
       file: path=/var/www/html state=directory mode=0755
