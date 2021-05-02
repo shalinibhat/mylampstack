@@ -36,5 +36,5 @@
       become: yes
       become_user: root
       copy:
-        remote_src: /tmp/index.html
+        src: /tmp/index.html
         dest: /var/www/html/index.html
