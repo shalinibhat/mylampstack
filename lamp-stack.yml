@@ -9,7 +9,7 @@
         pkg:
           - httpd
           - php
-          - http://repo.mysql.com/mysql57-community-release-el7-10.noarch.rpm
+          - mariadb-server
         state: present
         update_cache: yes
 
@@ -22,7 +22,12 @@
         enabled: yes
 
     - name: service mysql start
-     action: service name=mysqld state=started
+      become: yes
+      become_user: root
+      service:
+        name: mysqld
+        state: started
+        enabled: yes
 
     - name: create target directory
       file: path=/var/www/html state=directory mode=0755
